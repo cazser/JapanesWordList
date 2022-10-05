@@ -17,7 +17,7 @@
   width: 100%;
   top:0;
   left:0;
-  background-color: rgba(100, 100, 100, 0.5);
+  background-color: rgba(100, 100, 100, 0.9);
   z-index: 10;
 }
 
