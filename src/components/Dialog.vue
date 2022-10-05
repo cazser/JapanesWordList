@@ -8,7 +8,7 @@
       <div class="weui-dialog-content">
       <slot></slot>
       </div>
-       <div class="button-wrapper" @click="onclose">
+       <div class="button-wrapper">
         <div class="leftbutton">
           <slot name="leftbutton"></slot>
         </div>

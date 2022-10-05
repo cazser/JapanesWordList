@@ -10,6 +10,21 @@ const y = ref(false);
 const toggle= ()=>{
   y.value = !y.value;
 }
+const curIndex = ref(0);
+const onSubmit=(e)=>{
+  e.preventDefault();
+}
+const onHelp=(e)=>{
+  e.preventDefault();
+}
+const next = ()=>{
+  if(curIndex.value<wordList.length){
+    curIndex.value++;
+  }
+}
+const end=()=>{
+  y.value = false;
+}
 </script>
 
 <template>
@@ -22,21 +37,21 @@ const toggle= ()=>{
             <div>
               写出中文对应的日文,
               <form>
-                <input />
-                <Button>
+                {{wordList[curIndex].中文}}<input />
+                <Button @click="onSubmit">
                   提交
                 </Button>
-                <Button>
+                <Button @click="onHelp">
                   帮助
                 </Button>
               </form>
             </div>
           </template>
         <template #leftbutton>
-         <span @click="onclick"> 下一个 </span> 
+         <span @click="next"> 下一个 </span> 
         </template>
         <template #rightbutton >
-          <span @click="onclick">
+          <span @click="end">
           结束
           </span>
         </template>
