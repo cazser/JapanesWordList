@@ -39,7 +39,7 @@ const onHelp=(e)=>{
   const synUtterance = new window.SpeechSynthesisUtterance();
     synUtterance.text = wordList[curIndex.value].日文;
     synUtterance.lang = "ja-JP";
-    synUtterance.pitch = 1; //音调高低0～2，默认1
+    synUtterance.pitch = 0; //音调高低0～2，默认1
     synUtterance.rate = 1;
     window.speechSynthesis.speak(synUtterance);
 }
@@ -61,6 +61,9 @@ const end=()=>{
   <h1>单词表</h1>
   <Button @click="toggle">
     练习
+  </Button>
+  <Button>
+    播放
   </Button>
   <Dialog v-model:visible="y">
     <template #default>
@@ -99,7 +102,7 @@ const end=()=>{
 
 <style scoped>
 .wordList{
-  margin: 20px;
+  margin: 40px;
 }
 .wordListCell{
   min-width: 200px;
