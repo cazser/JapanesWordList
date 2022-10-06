@@ -54,7 +54,18 @@ const next = ()=>{
 const end=()=>{
   y.value = false;
 }
+const onPlay=()=>{
+  for(let i=0; i<wordList.length; i++){
 
+    const synUtterance = new window.SpeechSynthesisUtterance();
+    synUtterance.text = wordList[i].日文;
+    synUtterance.lang = "ja-JP";
+    synUtterance.pitch = 0; //音调高低0～2，默认1
+    synUtterance.rate = 1;
+    window.speechSynthesis.speak(synUtterance); 
+
+  }
+}
 </script>
 
 <template>
@@ -62,7 +73,7 @@ const end=()=>{
   <Button @click="toggle">
     练习
   </Button>
-  <Button>
+  <Button @click="onPlay">
     播放
   </Button>
   <Dialog v-model:visible="y">
