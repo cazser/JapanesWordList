@@ -102,7 +102,7 @@ const end=()=>{
 
 <style scoped>
 .wordList{
-  margin: 40px;
+  margin: 60px;
 }
 .wordListCell{
   min-width: 200px;
