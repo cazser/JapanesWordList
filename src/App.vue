@@ -113,7 +113,8 @@ const onPlay=()=>{
 
 <style scoped>
 .wordList{
-  margin: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 .wordListCell{
   min-width: 200px;
